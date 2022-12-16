@@ -163,7 +163,7 @@ console.log(
     maxIncrease
 );
 
-// Calculating the greatest Decrease in Profits:
+// Calculating the greatest Decrease in Profits
 
 var maxDecrease = changes[0];
 for (var i = 1; i < changes.length; i++) {
