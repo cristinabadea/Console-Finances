@@ -123,3 +123,10 @@ for (var i = 0; i < sumsArray.length; i++) {
     sums.push(sumsArray[i]);
   }
 }
+
+//Calculating the net total amount of Profit/Losses over the entire period
+var totalAmount = 0;
+for (var i = 0; i < sums.length; i++) {
+  totalAmount = totalAmount + sums[i];
+}
+console.log("Total: $" + totalAmount);
