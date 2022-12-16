@@ -1,26 +1,16 @@
 <!-- @format -->
 
-# Unit 4 Challenge: Console Finances
+# Console-Finances
 
-## Overview
+## Description
 
-In this challenge, you'll be using the concepts you've learned to complete the required activity. This activity presents a real-world situation in which your newfound JavaScript skills will come in handy. You are tasked with creating code for analyzing the financial records of a company. You have been provided with a financial dataset in the `starter/index.js` file.
-
-## Instructions
-
-1. Create a new GitHub repo called `Console-Finances`. Then, clone it to your computer.
-
-2. Copy the starter files in your local git repository.
-
-You have been given a dataset composed of arrays with two fields, Date and Profit/Losses.
-
-Your task is to write JavaScript code that analyzes the records to calculate each of the following:
+I have created a Finance Analysis using JavaScript which calculates the following:
 
 - The total number of months included in the dataset.
 
 - The net total amount of Profit/Losses over the entire period.
 
-- The average of the **changes** in Profit/Losses over the entire period.
+- The average of the changes in Profit/Losses over the entire period.
 
   - You will need to track what the total change in profits are from month to month and then find the average.
   - (`Total/Number of months`)
@@ -29,68 +19,52 @@ Your task is to write JavaScript code that analyzes the records to calculate eac
 
 - The greatest decrease in losses (date and amount) over the entire period.
 
-When you open your code in the browser your resulting analysis should look similar to the following:
+![HTML Page & Console](./starter/Images/HTML%26Console.png)
 
-```text
-Financial Analysis
-----------------------------
-Total Months: 25
-Total: $2561231
-Average  Change: $-2315.12
-Greatest Increase in Profits: Feb-2012 ($1926159)
-Greatest Decrease in Profits: Sep-2013 ($-2196167)
-```
+## Installation
 
-Your final code should print the analysis to the console.
+N/A
 
-**Hints:**
+## Usage
 
-- You will need to do some research on your own for this project!
+- To begin with, I accessed the nested array and created two separate arrays using the _push()_ method - one for the months and the other for the profits/losses. However, upon further inspection, I noticed that the elements in the new arrays were being counted twice due to the double iteration used to access the inner arrays. As a result, I created new arrays to remove duplicates by only including elements with even indices.
+- I calculated the number of months by using the _length_ method.
 
-- Remember, in order to combine strings and variables in the console you will need to use **concatenation**.
+  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.09.34.png)
 
-- How do you only print to the nearest 100th in JavaScript?
+- I then determined the total amount of profits and losses by creating a new variable, **totalAmount**, setting the inital value to 0 and then interating through the **sums** array in order to add the elements and store the sum in the **totalAmount** variable.
 
-## Grading Requirements
+  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.14.20.png)
 
-This homework is graded based on the following criteria:
+- Next, I determined the average of the changes in Profit/Losses by creating an array called **changes** and iterating through the _sums_ array to find the difference between consecutive elements, which I added to the **changes** array. I then created the **total** variable by summing the elements in the **changes** array, and the **averageChange** variable by dividing the total by the number of months minus one (since there are 86 months, but only 85 changes). I used the _toFixed(2)_ method to display only two decimal points.
 
-### Technical Acceptance Criteria: 40%
+  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.14.39.png)
 
-- Satisfies all of the above acceptance criteria.
+- For the greatest increase/decrease, I first declared the variables **maxIncrease** and **maxDecrease** and assigned the first element of the **changes** array to them. I then used a _for loop_ to iterate through the **changes** array starting at the second element and compare the values of **maxIncrease**/**maxDecrease** to the current element. If the variables were greater/lower than the current element, I replaced their values with the current element. As I had used separate arrays for the months and changes, I then created two variables for the best and worst months and assigned them the indices of the **maxIncrease** and **maxDecrease** elements, respectively. I used these variables _plus one_ as indices for the months array (plus one because there are 85 changes and 86 months, and the first month cannot have any changes).
 
-### Deployment: 32%
+  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.14.58.png)
+  ![JS-Code-snippet](./starter/Images/Screenshot%202022-12-16%20at%2021.15.09.png)
 
-- Application deployed at live URL.
+## Credits
 
-- Application loads with no errors.
+N/A
 
-- Application GitHub URL submitted.
+## License
 
-- GitHub repository contains application code.
+MIT License
 
-### Repository Quality: 12%
+## Badges
 
-- Repository has a unique name.
+N/A
 
-- Repository follows best practices for file structure and naming conventions.
+## Features
 
-- Repository follows best practices for variable naming conventions, indentation, quality comments, etc.
+N/A
 
-- Repository contains multiple descriptive commit messages.
+## How to Contribute
 
-- Repository contains quality readme with description, screenshot, link to deployed application.
+N/A
 
-## Review
+## Tests
 
-You are required to submit BOTH of the following for review:
-
-- The URL of the deployed application.
-
-- The URL of the GitHub repository that contains your code. Give the repository a unique name and include a README file that describes the project.
-
----
-
-## Copyright
-
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+N/A
