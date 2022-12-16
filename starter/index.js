@@ -146,3 +146,19 @@ for (var i = 0; i < changes.length; i++) {
 }
 //Adding toFixed(2) method in order to show only 2 decimals
 console.log("Average  Change: $" + averageChange.toFixed(2));
+
+//Calculating the greatest increase in profits (date and amount) over the entire period.
+var maxIncrease = changes[0];
+for (var i = 1; i < changes.length; i++) {
+  if (changes[i] > maxIncrease) {
+    maxIncrease = changes[i];
+  }
+}
+var findTheBestMonth = changes.indexOf(maxIncrease);
+
+console.log(
+  "Greatest Increase in Profits: " +
+    months[findTheBestMonth + 1] +
+    " $" +
+    maxIncrease
+);
