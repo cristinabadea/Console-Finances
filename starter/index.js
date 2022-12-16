@@ -162,3 +162,20 @@ console.log(
     " $" +
     maxIncrease
 );
+
+// Calculating the greatest Decrease in Profits:
+
+var maxDecrease = changes[0];
+for (var i = 1; i < changes.length; i++) {
+  if (changes[i] < maxDecrease) {
+    maxDecrease = changes[i];
+  }
+}
+var findTheWorstMonth = changes.indexOf(maxDecrease);
+
+console.log(
+  "Greatest Decrease in Profits: " +
+    months[findTheWorstMonth + 1] +
+    " $" +
+    maxDecrease
+);
