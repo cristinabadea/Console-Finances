@@ -88,3 +88,38 @@ var finances = [
   ["Jan-2017", 138230],
   ["Feb-2017", 671099],
 ];
+
+// Financial Analysis
+
+console.log("Financial Analysis");
+console.log("----------------------------");
+
+//Creating two separate arrays for months and for the sums
+var monthsArray = [];
+var sumsArray = [];
+for (i = 0; i < finances.length; i++) {
+  for (j = 0; j < finances[i].length; j++) {
+    monthsArray.push(finances[i][0]);
+    sumsArray.push(finances[i][1]);
+  }
+}
+
+// Removing the duplicates in the month array
+var months = [];
+for (var i = 0; i < monthsArray.length; i++) {
+  if (i % 2 === 0) {
+    months.push(monthsArray[i]);
+  }
+}
+
+//Calculating the total number of months included in the dataset
+var numberOfMonths = months.length;
+console.log("Total Months: " + numberOfMonths);
+
+// Removing the duplicates in the month array
+var sums = [];
+for (var i = 0; i < sumsArray.length; i++) {
+  if (i % 2 === 0) {
+    sums.push(sumsArray[i]);
+  }
+}
