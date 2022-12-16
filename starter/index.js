@@ -130,3 +130,19 @@ for (var i = 0; i < sums.length; i++) {
   totalAmount = totalAmount + sums[i];
 }
 console.log("Total: $" + totalAmount);
+
+//Calculating the average of the changes in Profit/Losses over the entire period
+var changes = [];
+for (var i = 0; i < sums.length - 1; i++) {
+  var differenceBetweenTwoElements = sums[i + 1] - sums[i];
+  changes.push(differenceBetweenTwoElements);
+}
+
+var total = 0;
+var averageChange = 0;
+for (var i = 0; i < changes.length; i++) {
+  total = total + changes[i];
+  averageChange = total / (numberOfMonths - 1);
+}
+//Adding toFixed(2) method in order to show only 2 decimals
+console.log("Average  Change: $" + averageChange.toFixed(2));
